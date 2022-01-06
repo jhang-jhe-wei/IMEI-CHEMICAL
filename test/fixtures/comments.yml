@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  tag: MyString
+  price: 
+  context: MyString
+  user_name: MyString
+  posted_time: 2022-01-06 13:17:19
+  source_url: MyString
+  source_type: MyString
+
+two:
+  name: MyString
+  category: MyString
+  tag: MyString
+  price: 
+  context: MyString
+  user_name: MyString
+  posted_time: 2022-01-06 13:17:19
+  source_url: MyString
+  source_type: MyString

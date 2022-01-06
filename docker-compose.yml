@@ -1,0 +1,25 @@
+version: '3.4'
+
+volumes:
+  postgres_data:
+    driver: local
+
+services:
+  postgres:
+    image: postgres:13.1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=boxing
+      - POSTGRES_USER=boxing
+      - POSTGRES_PASSWORD=boxing
+  application:
+    image: kugifood-rails
+    environment:
+      - AUTO_MIGRATION=yes
+      - DATABASE_URL=postgres://boxing:boxing@postgres/boxing
+      - RAILS_MASTER_KEY=c81459c3504a0fafbc2ec82beacb05ce
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
