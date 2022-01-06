@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_051719) do
     t.integer "price"
     t.string "context"
     t.string "user_name"
-    t.datetime "posted_time"
+    t.string "posted_at"
     t.string "source_url"
     t.string "source_type"
     t.datetime "created_at", precision: 6, null: false

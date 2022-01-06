@@ -7,7 +7,7 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.integer :price
       t.string :context
       t.string :user_name
-      t.datetime :posted_time
+      t.string :posted_at
       t.string :source_url
       t.string :source_type
 

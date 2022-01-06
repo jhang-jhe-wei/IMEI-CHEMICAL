@@ -14,13 +14,15 @@ class PttCommentParser
       articles_in_board(board) do |article|
         puts "  在文章 ##{article}"
         pushs = get_pushs_in_article(article)
-        pushs.each do |push|
-          push.merge!({
-            source_type: "PTT",
-            source_url: "https://www.ptt.cc/#{article}",
-          })
-          puts "   寫入推文: #{push}"
-          Comment.create! push
+        ActiveRecord::Base.transaction do
+          pushs.each do |push|
+            push.merge!({
+              source_type: "PTT",
+              source_url: "https://www.ptt.cc/#{article}",
+            })
+            puts "   寫入推文: #{push}"
+            Comment.create! push
+          end
         end
       end
     end
@@ -78,7 +80,7 @@ class PttCommentParser
       {
         user_name: push.at_css(".push-userid").text.strip,
         context: push.at_css(".push-content").text[2..-1],
-        posted_time: push.at_css(".push-ipdatetime").text.strip
+        posted_at: push.at_css(".push-ipdatetime").text.strip
       }
     end
   end
