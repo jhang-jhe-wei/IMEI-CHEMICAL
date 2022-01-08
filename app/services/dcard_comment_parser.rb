@@ -1,7 +1,7 @@
 class DcardCommentParser
   Capybara.default_max_wait_time = 1
-  Capybara.default_driver = :selenium_chrome
-  # Capybara.default_driver = :selenium_chrome_headless
+  # Capybara.default_driver = :selenium_chrome
+  Capybara.default_driver = :selenium_chrome_headless
 
   CACHE_FILE_PATH = "#{Rails.root}/app/services/dcard_post_urls.json"
 
@@ -21,10 +21,12 @@ class DcardCommentParser
     Capybara.current_session.driver.quit
   end
 
+  private
   def load_post_comments(post_url)
     @b.visit(post_url)
     return if @b.all("#comment").empty?
     data_keys = []
+    category = @b.all("a[href='#{/https:\/\/www.dcard.tw(.*)\/p\/\d*/.match(post_url)[1]}']").first&.text
     number_of_comments = @b.all("#comment>div>div").first&.text&.scan(/\d/)&.join&.to_i
     @b.scroll_to(@b.find("#comment"))
     until data_keys.size >= number_of_comments
@@ -42,9 +44,8 @@ class DcardCommentParser
         unless data_keys.include? div["data-key"]
           data_keys << div["data-key"]
           data = div.all("span").map(&:text)
-          byebug
           data[1..-4].each do |comment|
-            comment_data = {user_name: data[0], context: comment, posted_at: data[-1], source_url: post_url, source_type: "Dcard"}
+            comment_data = {user_name: data[0], category: category, context: comment, posted_at: data[-1], source_url: post_url, source_type: "Dcard"}
             puts "寫入資料#{comment_data.to_s}"
             Comment.create!(comment_data)
           end
