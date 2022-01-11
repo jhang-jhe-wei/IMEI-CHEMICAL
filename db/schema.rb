@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_09_104754) do
+ActiveRecord::Schema.define(version: 2022_01_11_082549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,4 +28,48 @@ ActiveRecord::Schema.define(version: 2022_01_09_104754) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "custom_code"
+    t.date "printed_at"
+    t.string "name"
+    t.string "spec"
+    t.integer "quantity"
+    t.string "format"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_items", force: :cascade do |t|
+    t.string "name"
+    t.decimal "weight"
+    t.decimal "unit_price"
+    t.decimal "price"
+    t.string "remark"
+    t.string "code"
+    t.bigint "recipe_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_id"], name: "index_recipe_items_on_recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.string "package_spec"
+    t.string "remark"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stock_units", force: :cascade do |t|
+    t.string "name"
+    t.string "spec"
+    t.string "code"
+    t.string "format"
+    t.decimal "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "recipe_items", "recipes"
 end
