@@ -44,4 +44,20 @@ namespace :one_time do
       end
     end
   end
+
+  desc "Generate fake data"
+  task generate_faker_data: :environment do
+    recipe = Recipe.create!(name: "山藥黑豆", package_spec: "20g*10包*12袋/箱", remark: "含 5 %不良")
+    recipe.recipe_items.create(name: "奶精", weight: 31.000, price: 400)
+    recipe.recipe_items.create(name: "3+1豆粉", weight: 32.000, price: 200)
+    recipe.recipe_items.create(name: "黑芝麻粉", weight: 4.000, price: 350)
+
+    StockUnit.create!(code: "AA000010010", name: "燕麥粒", spec: "25kg/袋", format: "kg", quantity: 132.70)
+    StockUnit.create!(code: "AA000010820", name: "大燕麥粒", spec: "25kg", format: "kg", quantity: 16092.63)
+    StockUnit.create!(code: "AA000021050", name: "芭樂丁", spec: "3公斤(5臺斤)*6包/箱", format: "kg", quantity: 78.7)
+
+    Order.create!(custom_code: "221010007", printed_at: Date.new(2021,12,01), name: "赤阪濃湯-玉米巧達", spec: "20g*10包*12袋/箱", quantity: 12, format: "袋", address: "新北市三重區三和路二段208號2樓之2")
+    Order.create!(custom_code: "221010002", printed_at: Date.new(2021,12,01), name: "加鈣營養餅", spec: "30g*11包*10袋/箱", quantity: 10, format: "袋", address: "新北市新店區碧潭路55號 ")
+    puts "Finished!"
+  end
 end
