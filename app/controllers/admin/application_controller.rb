@@ -6,16 +6,16 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
+    before_action :authenticate_user!
+    Admin_roles = ["admin"]
+    Admin_actions = [:new, :destroy, :edit]
 
-    def authenticate_admin
-      # TODO Add authentication logic here.
+    def show_action?(_action, _resource)
+      if Admin_actions.include?(_action)
+        Admin_roles.include?(current_user.role)? true:false
+      else
+        true
+      end
     end
-
-    # Override this value to specify the number of elements to display at a time
-    # on index pages. Defaults to 20.
-    # def records_per_page
-    #   params[:per_page] || 20
-    # end
   end
 end
