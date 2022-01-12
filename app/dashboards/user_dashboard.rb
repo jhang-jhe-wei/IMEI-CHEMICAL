@@ -12,6 +12,8 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     name: Field::String,
     phone: Field::String,
+    password: Field::String,
+    password_confirmation: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -28,6 +30,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    role
     email
     name
     phone
@@ -40,10 +43,6 @@ class UserDashboard < Administrate::BaseDashboard
     email
     name
     phone
-    encrypted_password
-    reset_password_token
-    reset_password_sent_at
-    remember_created_at
     role
     created_at
     updated_at
@@ -56,11 +55,9 @@ class UserDashboard < Administrate::BaseDashboard
     email
     name
     phone
-    encrypted_password
-    reset_password_token
-    reset_password_sent_at
-    remember_created_at
     role
+    password
+    password_confirmation
   ].freeze
 
   # COLLECTION_FILTERS
