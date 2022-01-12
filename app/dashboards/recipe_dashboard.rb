@@ -8,7 +8,10 @@ class RecipeDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    recipe_items: Field::HasMany,
+    recipe_items: Field::HasMany.with_options(
+    searchable: true,
+    searchable_fields: ['name'],
+  ),
     id: Field::Number,
     name: Field::String,
     package_spec: Field::String,
@@ -70,4 +73,7 @@ class RecipeDashboard < Administrate::BaseDashboard
   # def display_resource(recipe)
   #   "Recipe ##{recipe.id}"
   # end
+  def display_resource(recipe)
+    recipe.name
+  end
 end

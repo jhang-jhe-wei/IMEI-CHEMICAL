@@ -12,13 +12,18 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     name: Field::String,
     phone: Field::String,
-    password: Field::String,
-    password_confirmation: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
-    role: Field::String,
+    role: Field::Select.with_options(
+      collection: [
+        [ "普通用戶", "user" ],
+        [ "管理員", "admin" ]
+      ]
+    ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -30,10 +35,10 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    role
-    email
     name
     phone
+    email
+    role
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

@@ -27,10 +27,10 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     code
-    recipe
     name
     weight
     price
+    recipe
     remark
   ].freeze
 
@@ -80,4 +80,7 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   # def display_resource(recipe_item)
   #   "RecipeItem ##{recipe_item.id}"
   # end
+  def display_resource(recipe_item)
+    recipe_item.name
+  end
 end

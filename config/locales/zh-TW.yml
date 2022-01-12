@@ -1,0 +1,51 @@
+zh-TW:
+  helpers:
+    label:
+      order:
+        name: 品名
+        custom_code: 客戶代號
+        printed_at: 單據日期
+        spec: 規格
+        quantity: 銷售數量
+        format: 單位
+        address: 地址
+      comment:
+        name: 標題
+        category:  分類
+        price: 售價
+        context: 內容
+        user_name: 使用者名稱
+        posted_at: 發布時間
+        source_url: 連結
+        source_type: 平台
+      recipe_item:
+        name: 原料名稱
+        weight: 重量(kg)
+        unit_price: 單位價格
+        price: 價格
+        remark: 備註
+        code: 料號
+        recipe: 對應的配方表
+      recipe:
+        name: 品名
+        package_spec: 包裝規格
+        remark: 備註
+        recipe_items: 材料種類
+      stock_unit:
+        name: 品名
+        spec: 規格
+        code: 品號
+        format: 單位
+        quantity: 庫存數量
+      user:
+        email: 電子信箱
+        role: 角色
+        name: 名字
+        phone: 電話
+  activerecord:
+    models:
+      recipe: 配方表
+      stock_unit: 庫存
+      order: 出貨單
+      comment: 評論
+      recipe_item: 材料
