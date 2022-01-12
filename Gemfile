@@ -60,3 +60,4 @@ gem 'faraday_middleware'
 gem 'faker'
 gem 'devise'
 gem 'devise-i18n'
+gem "administrate"
