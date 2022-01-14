@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :comments
       resources :recipe_items
 
-      root to: "users#index"
+      root to: "recipes#index"
     end
   root to: "landings#index"
   devise_for :users
