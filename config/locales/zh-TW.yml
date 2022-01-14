@@ -1,6 +1,11 @@
 zh-TW:
   helpers:
     label:
+      recipe:
+        name: 品名
+        package_spec: 包裝規格
+        remark: 備註
+        recipe_items: 材料種類
       order:
         name: 品名
         custom_code: 客戶代號
@@ -26,11 +31,6 @@ zh-TW:
         remark: 備註
         code: 料號
         recipe: 對應的配方表
-      recipe:
-        name: 品名
-        package_spec: 包裝規格
-        remark: 備註
-        recipe_items: 材料種類
       stock_unit:
         name: 品名
         spec: 規格
