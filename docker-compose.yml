@@ -10,12 +10,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=boxing
-      - POSTGRES_USER=boxing
-      - POSTGRES_PASSWORD=boxing
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
   application:
-    image: kugifood-rails
+    image: registry.gitlab.com/jhang-jhe-wei/kugifoods-rails
     environment:
+      - RAILS_SERVE_STATIC_FILES=yes
       - AUTO_MIGRATION=yes
       - DATABASE_URL=postgres://boxing:boxing@postgres/boxing
       - RAILS_MASTER_KEY=c81459c3504a0fafbc2ec82beacb05ce

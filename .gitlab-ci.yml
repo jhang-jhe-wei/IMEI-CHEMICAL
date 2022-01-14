@@ -4,8 +4,9 @@ include:
 variables:
   RUBY_VERSION: 2.7.4
   ASSETS_PRECOMPILE: 'yes'
+  RSPEC_JUNIT_REPORT: 'no'
 
-brakeman:
+rspec:
   rules:
     - if: $CI_MERGE_REQUEST_ID
 
