@@ -42,8 +42,5 @@ module Admin
 
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
-    def show_action?(_action, _resource)
-      Admin_roles.include?(current_user.role)? true: false
-    end
 end
 end
