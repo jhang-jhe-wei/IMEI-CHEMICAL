@@ -45,8 +45,6 @@ class CommentDashboard < Administrate::BaseDashboard
     posted_at
     source_url
     source_type
-    created_at
-    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
