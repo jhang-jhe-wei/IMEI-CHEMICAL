@@ -9,8 +9,3 @@ variables:
 rspec:
   rules:
     - if: $CI_MERGE_REQUEST_ID
-
-trivy:
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: $CI_PIPELINE_SOURCE == 'schedule'
