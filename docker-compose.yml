@@ -19,7 +19,7 @@ services:
       - RAILS_SERVE_STATIC_FILES=yes
       - AUTO_MIGRATION=yes
       - DATABASE_URL=postgres://boxing:boxing@postgres/boxing
-      - RAILS_MASTER_KEY=c81459c3504a0fafbc2ec82beacb05ce
+      - RAILS_MASTER_KEY
     ports:
       - "3000:3000"
     depends_on:
