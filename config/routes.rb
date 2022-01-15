@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :users
       resources :recipes
+      resources :recipe_items
       resources :stock_units
       resources :orders
       resources :comments
-      resources :recipe_items
 
       root to: "recipes#index"
     end
