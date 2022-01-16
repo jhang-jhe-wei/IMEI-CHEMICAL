@@ -23,7 +23,7 @@ module Admin
     end
 
     def show_action?(_action, _resource)
-      return false if _resource == Comment && !(_action == :index || _action == :show )
+      return false if _resource.class == Comment && !(_action == :index || _action == :show )
       return false if _resource == User && !is_admin?
       return false if !is_admin? && !(_action == :index || _action == :show )
       true
