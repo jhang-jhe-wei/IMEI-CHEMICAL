@@ -52,24 +52,26 @@ It renders the `_table` partial to display details about the resources.
   </div>
 </header>
 
-<div class="mt-3 mb-3 ms-5 me-5">
-  <div class="row g-3 align-items-center">
-    <div class="col-auto">
-      <span class="form-text">
-        爬取有關 <strong>麥片</strong> 的評論
-      </span>
-    </div>
-    <div class="col-auto">
-      <select id= "platform" class="form-select" aria-label="Default select example">
-        <option selected>選擇要爬取的平台</option>
-        <option value="Dcard">Dcard</option>
-        <option value="PTT">PTT</option>
-        <option value="蝦皮">蝦皮</option>
-        <option value="樂天">樂天</option>
-      </select>
-    </div>
-    <div class="col-auto">
-      <%= link_to("開始爬取", admin_comments_visited_path, method: :post, remote: true, id: "btn-parse", class: "btn btn-primary") %>
+<div class="border-bottom">
+  <div class="mt-3 mb-3 ms-5 me-5">
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <span class="form-text">
+          爬取有關 <strong>麥片</strong> 的評論
+        </span>
+      </div>
+      <div class="col-auto">
+        <select id= "platform" class="form-select" aria-label="Default select example">
+          <option selected>選擇要爬取的平台</option>
+          <option value="Dcard">Dcard</option>
+          <option value="PTT">PTT</option>
+          <option value="蝦皮">蝦皮</option>
+          <option value="樂天">樂天</option>
+        </select>
+      </div>
+      <div class="col-auto">
+        <%= link_to("開始爬取", admin_comments_visited_path, method: :post, remote: true, id: "btn-parse", class: "btn btn-primary") %>
+      </div>
     </div>
   </div>
 </div>
