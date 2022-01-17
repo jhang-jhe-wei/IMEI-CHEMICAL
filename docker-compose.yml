@@ -18,7 +18,7 @@ services:
     environment:
       - RAILS_SERVE_STATIC_FILES=yes
       - AUTO_MIGRATION=yes
-      - DATABASE_URL=postgres://boxing:boxing@postgres/boxing
+      - DATABASE_URL=postgres://postgres:postgres@postgres/postgres
       - RAILS_MASTER_KEY
     ports:
       - "3000:3000"
