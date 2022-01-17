@@ -14,7 +14,7 @@ services:
       - POSTGRES_USER
       - POSTGRES_PASSWORD
   application:
-    image: registry.gitlab.com/jhang-jhe-wei/kugifoods-rails
+    image: registry.gitlab.com/jhang-jhe-wei/kugifoods-rails:latest
     environment:
       - RAILS_SERVE_STATIC_FILES=yes
       - AUTO_MIGRATION=yes
