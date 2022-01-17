@@ -43,6 +43,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'boxing'
+  gem "capistrano-rails"
+  gem "capistrano-passenger"
+  gem 'capistrano-rvm'
 end
 
 # Adds support for Capybara system testing and selenium driver
