@@ -63,3 +63,5 @@ gem 'devise-i18n'
 gem "administrate"
 gem 'rails-i18n', '~> 6.0'
 gem "chartkick"
+
+gem "bootstrap5-kaminari-views", "~> 0.0.1"
