@@ -43,6 +43,24 @@ module Admin
     # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
     # for more information
     #
+    def visited
+      if ["PTT", "Dcard", "蝦皮", "樂天"].include?(params[:platform])
+        new_comments = Comment.unscoped.where(source_type: params[:platform], visited: false).order("RANDOM()").limit(3)
+        new_comments.update(visited: true)
+        authorize_resource(resource_class)
+        search_term = params[:search].to_s.strip
+        resources = new_comments
+        page = Administrate::Page::Collection.new(dashboard, order: order)
+
+        render "admin/comments/visited", :layout => false, locals: {
+          resources: resources,
+          page: page,
+        }
+      else
+        render :nothing => true
+      end
+    end
+
     def default_sorting_attribute
       :id
     end

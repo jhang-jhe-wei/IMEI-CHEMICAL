@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :stock_units
       resources :orders
       resources :comments
-
+      post "comments/visited", to: "comments#visited"
       root to: "recipes#index"
     end
   root to: "landings#index"

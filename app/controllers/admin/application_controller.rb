@@ -12,6 +12,7 @@ module Admin
     Admin_actions = [:new, :destroy, :edit, :update, :put, :create]
 
     def authorization?
+      return true if controller_is_comments? && action_name == "visited"
       return false if controller_is_comments? && !is_index_or_show?
       return false if controller_is_users? && !is_admin?
       return false if !is_admin? && !is_index_or_show?
