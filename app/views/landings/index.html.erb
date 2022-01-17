@@ -1,2 +1,145 @@
-<h1>Landings#index</h1>
-<p>Find me in app/views/landings/index.html.erb</p>
+<div id="db-wrapper">
+  <!-- Page content -->
+  <div id="page-content">
+    <!-- Container fluid -->
+    <div class="bg-primary pt-10 pb-21"></div>
+    <div class="container-fluid mt-n22 px-6">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+          <!-- Page header -->
+          <div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="mb-2 mb-lg-0">
+                <h3 class="mb-0  text-white">廣吉系統</h3>
+              </div>
+              <div>
+                <%= link_to "進入後台", admin_root_path, class: "btn btn-light" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-12 col-12 mt-6">
+          <!-- card -->
+          <div class="card ">
+            <!-- card body -->
+            <div class="card-body">
+              <!-- heading -->
+              <div class="d-flex justify-content-between align-items-center
+                mb-3">
+                <div>
+                  <h4 class="mb-0">系統人數</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-primary text-primary
+                  rounded-2">
+                  <i class="bi bi-briefcase fs-4"></i>
+                </div>
+              </div>
+              <!-- project number -->
+              <div>
+                <h1 class="fw-bold"><%= @user_count %></h1>
+                <p class="mb-0"><span class="text-dark me-2"><%= @admin_count %></span>管理員</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-12 col-12 mt-6">
+          <!-- card -->
+          <div class="card ">
+            <!-- card body -->
+            <div class="card-body">
+              <!-- heading -->
+              <div class="d-flex justify-content-between align-items-center
+                mb-3">
+                <div>
+                  <h4 class="mb-0">配方表</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-primary text-primary
+                  rounded-2">
+                  <i class="bi bi-list-task fs-4"></i>
+                </div>
+              </div>
+              <!-- project number -->
+              <div>
+                <h1 class="fw-bold"><%= @recipe_count %></h1>
+                <p class="mb-0"><span class="text-dark me-2"><%= @recipe_items_count %></span>種材料</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-12 col-12 mt-6">
+          <!-- card -->
+          <div class="card ">
+            <!-- card body -->
+            <div class="card-body">
+              <!-- heading -->
+              <div class="d-flex justify-content-between align-items-center
+                          mb-3">
+                <div>
+                  <h4 class="mb-0">出貨單</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-primary text-primary
+                            rounded-2">
+                  <i class="bi bi-bullseye fs-4"></i>
+                </div>
+              </div>
+              <!-- project number -->
+              <div>
+                <h1 class="fw-bold"><%= @order_count %></h1>
+                <p class="mb-0"><span class="text-dark me-2">0</span>待出貨</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-12 col-12 mt-6">
+          <!-- card -->
+          <div class="card ">
+            <!-- card body -->
+            <div class="card-body">
+              <!-- heading -->
+              <div class="d-flex justify-content-between align-items-center
+                          mb-3">
+                <div>
+                  <h4 class="mb-0">已爬取評論</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-primary text-primary
+                            rounded-2">
+                  <i class="bi bi-bullseye fs-4"></i>
+                </div>
+              </div>
+              <!-- project number -->
+              <div>
+                <h1 class="fw-bold"><%= @comment_count %></h1>
+                <p class="mb-0">與<span class="text-success ms-2 me-2">麥片</span>相關</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <div class="card">
+            <!-- card body -->
+            <div class="card-body">
+              <!-- heading -->
+              <div class="d-flex justify-content-between align-items-center
+                             mb-3">
+                <div>
+                  <h4 class="mb-0">庫存圖表</h4>
+                </div>
+                <div class="icon-shape icon-md bg-light-primary text-primary
+                               rounded-2">
+                  <i class="bi bi-bullseye fs-4"></i>
+                </div>
+              </div>
+              <%= bar_chart StockUnit.group(:name).sum(:quantity), width: "95%" %>
+              <div>
+                <p class="mb-0">單位：<span class="text-dark ms-2 me-2">kg</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

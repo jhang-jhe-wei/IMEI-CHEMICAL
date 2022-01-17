@@ -62,3 +62,4 @@ gem 'devise'
 gem 'devise-i18n'
 gem "administrate"
 gem 'rails-i18n', '~> 6.0'
+gem "chartkick"
