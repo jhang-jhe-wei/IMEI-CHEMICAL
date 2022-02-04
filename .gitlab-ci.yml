@@ -2,7 +2,7 @@ include:
   remote: https://github.com/elct9620/ruby-gitlab-ci/raw/main/rails.yml
 
 variables:
-  RUBY_VERSION: 2.7.4
+  RUBY_VERSION: 2.7.2
   ASSETS_PRECOMPILE: 'yes'
   RSPEC_JUNIT_REPORT: 'no'
 
