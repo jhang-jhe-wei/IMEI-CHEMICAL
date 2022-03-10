@@ -22,3 +22,7 @@
   padding-right: 2rem !important;
   padding-left: 2rem !important;
 }
+
+.bg-gray {
+  background-color: #F5F5F5;
+}
