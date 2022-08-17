@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: kugifoods_development
+  database: imei-chemical-development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: kugifoods_test
+  database: imei-chemical-test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,8 +81,3 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: kugifoods_production
-  username: wells
-  password: <%= ENV['KUGIFOOD_DATABASE_PASSWORD'] %>
