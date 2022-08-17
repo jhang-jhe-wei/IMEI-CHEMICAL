@@ -17,7 +17,10 @@ as defined by the routes in the `admin/` namespace
       class: "navigation__link navigation__link--#{nav_link_state(resource)}"
     ) if valid_action?(:index, resource) && show_action?(:index, model_from_resource(resource)) %>
   <% end %>
-  <%= link_to "模型物料分析", "https://ai-assistant.datatm.net/runes/login", target: "_blank", class: "navigation__link"%>
+  <%= link_to "行銷紀錄", "#", target: "_blank", class: "navigation__link"%>
+  <%= link_to "生產紀錄", "#", target: "_blank", class: "navigation__link"%>
+  <%= link_to "供應商物料管理", "http://114.34.167.172:49159/iSupplyE", target: "_blank", class: "navigation__link"%>
+  <%= link_to "模型物料分析", "https://ai-assistant.datatm.net/runes/", target: "_blank", class: "navigation__link"%>
   <%= link_to "配方模擬", "https://acc-dev.topfuntek.com/turncard/recipe_item", target: "_blank", class: "navigation__link"%>
   <%= link_to "登出", destroy_user_session_path, :method => :delete, class: "text-color-red"%>
 </nav>
