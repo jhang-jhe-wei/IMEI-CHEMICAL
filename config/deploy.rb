@@ -1,6 +1,6 @@
 sh "ssh-add ~/.ssh/wells-ssh-key"
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.16.0"
+lock "~> 3.17.1"
 
 set :application, "imei-chemical"
 set :repo_url, "git@github.com:jhang-jhe-wei/IMEI-CHEMICAL.git"
