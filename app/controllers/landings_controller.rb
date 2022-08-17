@@ -5,7 +5,6 @@ class LandingsController < ApplicationController
     @admin_count = User.where(role: Admin_roles).count
     @recipe_count = Recipe.count
     @recipe_items_count = RecipeItem.count
-    @order_count = Order.count
     @comment_count = Comment.count
   end
 end
