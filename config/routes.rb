@@ -3,7 +3,6 @@ Rails.application.routes.draw do
       resources :users
       resources :recipes
       resources :recipe_items
-      resources :orders
       resources :comments
       post "comments/visited", to: "comments#visited"
       root to: "recipes#index"
