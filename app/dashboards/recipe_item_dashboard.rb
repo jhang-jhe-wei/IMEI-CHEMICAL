@@ -9,13 +9,8 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     recipe: Field::BelongsTo,
-    id: Field::Number,
     name: Field::String,
-    weight: Field::String.with_options(searchable: false),
-    unit_price: Field::String.with_options(searchable: false),
-    price: Field::String.with_options(searchable: false),
     remark: Field::String,
-    code: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,11 +21,7 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    code
     name
-    weight
-    price
-    recipe
     remark
   ].freeze
 
@@ -38,13 +29,8 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     recipe
-    id
     name
-    weight
-    unit_price
-    price
     remark
-    code
     created_at
     updated_at
   ].freeze
@@ -55,11 +41,7 @@ class RecipeItemDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     recipe
     name
-    weight
-    unit_price
-    price
     remark
-    code
   ].freeze
 
   # COLLECTION_FILTERS
