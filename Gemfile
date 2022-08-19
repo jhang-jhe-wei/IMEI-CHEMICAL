@@ -69,3 +69,5 @@ gem "chartkick"
 
 gem "bootstrap5-kaminari-views", "~> 0.0.1"
 gem 'roo'
+gem 'administrate-field-active_storage'
+gem "image_processing"
