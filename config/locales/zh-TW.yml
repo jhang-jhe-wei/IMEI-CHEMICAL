@@ -29,7 +29,7 @@ zh-TW:
         qty: 量
         assays: assays
         melting_point: 熔點
-        type: 狀態
+        status: 狀態
         expression: 化學式
         remark: 備註
         recipe: 對應的配方表

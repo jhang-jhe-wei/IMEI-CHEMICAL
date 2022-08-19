@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_19_032240) do
+ActiveRecord::Schema.define(version: 2022_08_19_034310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_032240) do
     t.string "qty"
     t.string "assays"
     t.string "melting_point"
-    t.string "type"
+    t.string "status"
     t.string "expression"
     t.index ["recipe_id"], name: "index_recipe_items_on_recipe_id"
   end

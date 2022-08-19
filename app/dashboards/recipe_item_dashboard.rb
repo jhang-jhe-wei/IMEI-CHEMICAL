@@ -14,9 +14,11 @@ class RecipeItemDashboard < Administrate::BaseDashboard
     qty: Field::String,
     assays: Field::String,
     melting_point: Field::String,
-    type: Field::String,
+    status: Field::String,
     expression: Field::String,
     remark: Field::String,
+    proof_pdf: Field::ActiveStorage,
+    picture: Field::ActiveStorage,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -32,9 +34,11 @@ class RecipeItemDashboard < Administrate::BaseDashboard
     qty
     assays
     melting_point
-    type
+    status
     expression
     remark
+    proof_pdf
+    picture
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -46,9 +50,11 @@ class RecipeItemDashboard < Administrate::BaseDashboard
     qty
     assays
     melting_point
-    type
+    status
     expression
     remark
+    proof_pdf
+    picture
     created_at
     updated_at
   ].freeze
@@ -63,9 +69,11 @@ class RecipeItemDashboard < Administrate::BaseDashboard
     qty
     assays
     melting_point
-    type
+    status
     expression
     remark
+    proof_pdf
+    picture
   ].freeze
 
   # COLLECTION_FILTERS
