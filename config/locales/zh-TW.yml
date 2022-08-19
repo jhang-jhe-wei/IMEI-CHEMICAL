@@ -24,12 +24,14 @@ zh-TW:
         source_url: 連結
         source_type: 平台
       recipe_item:
-        name: 原料名稱
-        weight: 重量(kg)
-        unit_price: 單位價格
-        price: 價格
+        name: 品名
+        category: 分類
+        qty: 量
+        assays: assays
+        melting_point: 熔點
+        type: 狀態
+        expression: 化學式
         remark: 備註
-        code: 料號
         recipe: 對應的配方表
       stock_unit:
         name: 品名
@@ -47,5 +49,5 @@ zh-TW:
       recipe: 配方表
       stock_unit: 庫存
       order: 出貨單
-      comment: 評論
-      recipe_item: 材料
+      comment: 輿情節取轉換
+      recipe_item: 客戶物料管理
